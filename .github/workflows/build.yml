@@ -1,9 +1,8 @@
 name: Grab latest data
 
 on:
-  schedule:
-    # * is a special character in YAML so you have to quote this string
-    - cron:  '* */6 * * *'
+  watch:
+       types: [started]
 
 jobs:
   build:
