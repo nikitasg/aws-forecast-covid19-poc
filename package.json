@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "axios": "^0.19.2",
+    "xml2json": "^0.12.0"
+  },
+  "scripts": {
+    "build": "node build.js"
+  },
+  "name": "coronavirus-data",
+  "description": "This is a mirror of the data presented on the [PHE Coronavirus Dashboard](https://coronavirus.data.gov.uk/).",
+  "version": "1.0.0",
+  "main": "build.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikitas/coronavirus-uk-data.git"
+  },
+}

@@ -1,0 +1,32 @@
+name: main
+
+on:
+  watch:
+       types: [started]
+    
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Build the data and create local changes
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.6.10'
+        architecture: x64
+    - name: Install requirements
+      run: |
+        pip install -r scripts/requirements.txt
+    - name: Process Data
+      run: |
+        python scripts/process.py
+    - name: Commit files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit --allow-empty -m "Auto-update of the data" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        force: true
