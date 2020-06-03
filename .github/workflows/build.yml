@@ -1,8 +1,8 @@
 name: Grab latest UK data
 
 on:
-  schedule:
-    - cron:  '* */4 * * *'
+  watch:
+       types: [started]
 
 jobs:
   build:
