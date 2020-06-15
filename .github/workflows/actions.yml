@@ -1,6 +1,10 @@
+#on:
+#  schedule:
+#    - cron:  '* */24 * * *'
+      
 on:
-  schedule:
-    - cron:  '* */24 * * *'
+  watch:
+       types: [started]
 
 jobs:
   update:
